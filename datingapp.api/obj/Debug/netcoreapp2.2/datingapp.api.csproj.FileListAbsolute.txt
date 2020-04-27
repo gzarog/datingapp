@@ -4,7 +4,6 @@ C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\datingap
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\datingapp.api.dll
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\datingapp.api.pdb
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.csprojAssemblyReference.cache
-C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.csproj.CoreCompileInputs.cache
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.RazorAssemblyInfo.cache
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.RazorAssemblyInfo.cs
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.AssemblyInfoInputs.cache
@@ -12,3 +11,6 @@ C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingap
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.RazorTargetAssemblyInfo.cache
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.dll
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.pdb
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\appsettings.json
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\Properties\launchSettings.json

@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-nav',
@@ -6,9 +6,16 @@
     styleUrls: ['./nav.component.css']
 })
 /** nav component*/
-export class NavComponent {
-    /** nav ctor */
+export class NavComponent implements OnInit {
+  model: any = {};
+/** nav ctor */
     constructor() {
+     
+  }
 
-    }
+  ngOnInit() { }
+
+  login() {
+    console.log(this.model);
+  }
 }

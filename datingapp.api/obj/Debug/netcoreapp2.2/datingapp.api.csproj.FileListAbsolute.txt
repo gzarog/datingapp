@@ -16,3 +16,4 @@ C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\appsetti
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.csproj.CoreCompileInputs.cache
 C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp2.2\datingapp.api.genruntimeconfig.cache
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp2.2\Data\UserSeedData.json

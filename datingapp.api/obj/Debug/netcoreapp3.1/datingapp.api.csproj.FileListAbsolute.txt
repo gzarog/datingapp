@@ -64,3 +64,4 @@ C:\testproj\coreangular\datingapp\datingapp.api\obj\Debug\netcoreapp3.1\staticwe
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll

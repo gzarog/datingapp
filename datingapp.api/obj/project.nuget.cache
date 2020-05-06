@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mFmpiyuLF6I6s+et/wF0SwKyI43sL0wyeq1/Oe05hdOwia+mGQLtiJ2IqWSbqFtGULdZra5SVkQ43BtYcK8nig==",
+  "dgSpecHash": "FgHiqJVeKHoZv9JKEyLnnwIGZliyAfsgbF6FoHAaBsuOXa38T8Grlurine9Powq3tXrGsbgkpDtkvDM4Yg02FA==",
   "success": true,
   "projectFilePath": "C:\\testproj\\coreangular\\datingapp\\datingapp.api\\datingapp.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zage\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\zage\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\zage\\.nuget\\packages\\cloudinarydotnet\\1.10.0\\cloudinarydotnet.1.10.0.nupkg.sha512",
     "C:\\Users\\zage\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.3\\microsoft.aspnetcore.authentication.jwtbearer.3.1.3.nupkg.sha512",
     "C:\\Users\\zage\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.3\\microsoft.aspnetcore.jsonpatch.3.1.3.nupkg.sha512",
     "C:\\Users\\zage\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.3\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.3.nupkg.sha512",

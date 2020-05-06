@@ -14,6 +14,7 @@ import { AuthService } from 'src/app/_services/auth.service';
 export class MemberEditComponent implements OnInit {
   @ViewChild('editProfileForm', {static: false}) editProfileForm: NgForm;
   user: User;
+  photoUrl: string;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
     if (this.editProfileForm.dirty) {
@@ -24,12 +25,13 @@ export class MemberEditComponent implements OnInit {
 
   // tslint:disable-next-line: max-line-length
   constructor(private route: ActivatedRoute , private alertify: AlertifyService,
-                             private userService: UserService , private authService: AuthService ) { }
+              private userService: UserService , private authService: AuthService ) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.user = data.user;
     });
+    this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl =  photoUrl);
   }
 
 
@@ -40,6 +42,11 @@ this.userService.updateUser(this.authService.decodedToken.nameid, this.user).sub
  }, error => {
    this.alertify.error(error);
  });
+}
+
+updateMainPhoto( photoUrl: string) {
+  this.user.photoUrl = photoUrl;
+
 }
 
 }

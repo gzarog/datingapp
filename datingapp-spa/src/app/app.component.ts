@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'datingapp-spa';
   jwtHelper = new JwtHelperService();
 
+
   constructor(private authService: AuthService) {}
 
   ngOnInit() {

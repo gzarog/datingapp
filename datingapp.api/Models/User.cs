@@ -7,8 +7,8 @@ namespace datingapp.api.Models
 {
     public class User
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string UserName { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public string Gender { get; set; }

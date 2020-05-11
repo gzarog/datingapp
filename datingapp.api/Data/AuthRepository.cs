@@ -17,7 +17,7 @@ namespace datingapp.api.Data
         }
         public async Task<User> Login(string userName, string password)
         {
-            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.Name == userName);
+            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.UserName == userName);
             if (user == null)
             {
                 return null;
@@ -72,7 +72,7 @@ namespace datingapp.api.Data
 
         public async Task<bool> UserExist(string userName)
         {
-            if (await _context.Users.AnyAsync(x => x.Name == userName))
+            if (await _context.Users.AnyAsync(x => x.UserName == userName))
             {
                 return true;
             }

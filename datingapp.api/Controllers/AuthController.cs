@@ -41,9 +41,9 @@ namespace datingapp.api.Controllers
             //    return BadRequest(ModelState);
             //}
 
-            userForRegisterDto.Name = userForRegisterDto.Name.ToLower();
+            userForRegisterDto.UserName = userForRegisterDto.UserName.ToLower();
 
-            if (await _repo.UserExist(userForRegisterDto.Name))
+            if (await _repo.UserExist(userForRegisterDto.UserName))
             {
                 return BadRequest("username exists");
             }
@@ -55,7 +55,7 @@ namespace datingapp.api.Controllers
 
             var userToReturn = _mapper.Map<UserForDetailedDto>(createdUser);
 
-            return CreatedAtRoute("GetUser", new {controller ="Users", id = createdUser.ID }, userToReturn);
+            return CreatedAtRoute("GetUser", new {controller ="Users", id = createdUser.Id }, userToReturn);
 
         }
 
@@ -63,7 +63,7 @@ namespace datingapp.api.Controllers
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
 
-            var userFromRepo = await _repo.Login(userForLoginDto.Name.ToLower(), userForLoginDto.Password);
+            var userFromRepo = await _repo.Login(userForLoginDto.UserName.ToLower(), userForLoginDto.Password);
 
             if (userFromRepo == null)
             {
@@ -72,8 +72,8 @@ namespace datingapp.api.Controllers
 
             var claims = new[]
             {
-                    new Claim(ClaimTypes.NameIdentifier,userFromRepo.ID.ToString()),
-                    new Claim(ClaimTypes.Name,userFromRepo.Name)
+                    new Claim(ClaimTypes.NameIdentifier,userFromRepo.Id.ToString()),
+                    new Claim(ClaimTypes.Name,userFromRepo.UserName)
                 };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));

@@ -9,7 +9,7 @@ namespace datingapp.api.Dtos
     public class UserForRegisterDto
     {
         [Required]
-        public string Name { get; set; }
+        public string UserName { get; set; }
         
         [Required]
         [StringLength(8,MinimumLength =4,ErrorMessage ="pass 4-8 chars")]

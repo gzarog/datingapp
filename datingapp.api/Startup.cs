@@ -33,7 +33,10 @@ namespace datingapp.api
             services.AddControllers().AddNewtonsoftJson(opt => {
                  opt.SerializerSettings.ReferenceLoopHandling= Newtonsoft.Json.ReferenceLoopHandling.Ignore;
              });;
-            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<DataContext>(x =>{
+                    x.UseLazyLoadingProxies();
+                    x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
            
             // services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
             // .AddNewtonsoftJson(opt => {

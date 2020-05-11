@@ -40,13 +40,13 @@ namespace datingapp.api.Data
 
         public async Task<User>  GetUser(int ID)
         {
-           var user = await _context.Users.Include(p=>p.Photos).FirstOrDefaultAsync(u=>u.ID == ID);
+           var user = await _context.Users.FirstOrDefaultAsync(u=>u.ID == ID);
            return user;
         }
 
         public async Task<PageList<User>> GetUsers( UserParams userParams)
         {
-           var users =  _context.Users.Include(p=>p.Photos).OrderByDescending(o =>o.LastActive).AsQueryable();
+           var users =  _context.Users.OrderByDescending(o =>o.LastActive).AsQueryable();
             users = users.Where(u=> u.ID != userParams.UserId);
             users = users.Where(u=> u.Gender == userParams.Gender);
 

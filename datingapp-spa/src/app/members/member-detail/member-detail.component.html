@@ -17,7 +17,7 @@
             </div>
             <div>
               <strong>Last Active:</strong>
-              <p>{{user.lastActive | timeAgo}}</p>
+              <p>{{user.lastActive }}</p>
             </div>
             <div>
               <strong>Member since:</strong>
@@ -49,7 +49,7 @@
                 <p>{{user.interests}}</p>
             </tab>
             <tab heading="Photos">
-              <ngx-gallery [options]="galleryOptions" [images]="galleryImage"></ngx-gallery>
+              <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
           </tab>
           <tab heading="Messages">
             <h4>messages</h4>

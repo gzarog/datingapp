@@ -8,16 +8,38 @@ namespace datingapp.api.Data
 {
     public class Seed
     {
-        public static void SeedUsers(UserManager<User> userManager)
+        public static void SeedUsers(UserManager<User> userManager , RoleManager<Role> roleManager)
         {
             if(!userManager.Users.Any())
             {
                 var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(userData);
+
+                 var roles  = new List<Role>{
+                    new Role{Name= "Member"},
+                    new Role{Name= "Admin"},
+                    new Role{Name= "Moderator"},
+                    new Role{Name= "Vip"},
+                };
+
+                foreach(var role in roles){
+                    roleManager.CreateAsync(role).Wait();
+                }
                 foreach(var user in users){
                    userManager.CreateAsync(user, "password").Wait();
+                   userManager.AddToRoleAsync(user, "Member").Wait();
                 }
 
+                var adminUser = new User {
+                    UserName = "Admin"
+                };
+
+                var result = userManager.CreateAsync(adminUser, "password").Result;
+                if(result.Succeeded)
+                {
+                    var admin = userManager.FindByNameAsync("Admin").Result;
+                    userManager.AddToRolesAsync(admin , new [] {"Admin", "Moderator"});
+                }
             }
         }
          private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)

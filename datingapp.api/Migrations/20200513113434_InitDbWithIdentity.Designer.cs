@@ -10,8 +10,8 @@ using datingapp.api.Data;
 namespace datingapp.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200511193602_IdentityInitial")]
-    partial class IdentityInitial
+    [Migration("20200513113434_InitDbWithIdentity")]
+    partial class InitDbWithIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

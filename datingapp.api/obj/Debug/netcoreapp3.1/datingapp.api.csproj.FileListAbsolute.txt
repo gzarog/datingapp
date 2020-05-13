@@ -67,3 +67,8 @@ C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\AutoMapp
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\testproj\coreangular\datingapp\datingapp.api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll

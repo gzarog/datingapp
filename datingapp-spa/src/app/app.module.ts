@@ -11,7 +11,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-
+import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppComponent } from './app.component';
@@ -35,6 +35,12 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { AdminPanelComponent } from './Admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/hasRole.directive';
+import { PhotoManagementComponent } from './Admin/photo-management/photo-management.component';
+import { AdminService } from './_services/admin.service';
+import { UserMamagementComponent } from './Admin/user-mamagement/user-mamagement.component';
+import { RolesModalComponent } from './Admin/roles-modal/roles-modal.component';
 //import {TimeAgoPipe} from 'time-ago-pipe';
 
 
@@ -55,14 +61,20 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       AppComponent,
       NavComponent,
       HomeComponent,
+      AdminPanelComponent,
+      UserMamagementComponent,
+      PhotoManagementComponent,
       RegisterComponent,
       MemberListComponent,
       ListsComponent,
+      RolesModalComponent,
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
+      HasRoleDirective
+
      // TimeAgoPipe,
 
    ],
@@ -75,6 +87,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       ReactiveFormsModule,
       FileUploadModule,
       TabsModule.forRoot(),
+      ModalModule.forRoot(),
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
       PaginationModule.forRoot(),
@@ -91,6 +104,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
    providers: [
       AuthService,
       ErrorInterceptorProvider,
+      AdminService,
       AlertifyService,
       AuthGuard,
       UserService,
@@ -98,8 +112,12 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MemberListResolver,
       PreventUnsavedChanges,
       MemberEditResolver,
+      BsModalRef,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
 
+   ],
+   entryComponents: [
+     RolesModalComponent
    ],
    bootstrap: [
       AppComponent

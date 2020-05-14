@@ -34,12 +34,10 @@ namespace datingapp.api.Data
                     UserName = "Admin"
                 };
 
-                var result = userManager.CreateAsync(adminUser, "password").Result;
-                if(result.Succeeded)
-                {
-                    var admin = userManager.FindByNameAsync("Admin").Result;
-                    userManager.AddToRolesAsync(admin , new [] {"Admin", "Moderator"});
-                }
+                userManager.CreateAsync(adminUser, "password").Wait();
+                var admin = userManager.FindByNameAsync("Admin").Result;
+                userManager.AddToRolesAsync(admin , new [] {"Admin", "Moderator"}).Wait();
+                
             }
         }
          private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)

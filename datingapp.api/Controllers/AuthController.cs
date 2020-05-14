@@ -73,7 +73,7 @@ namespace datingapp.api.Controllers
                 var appUser =_mapper.Map<UserForListDto>(user);
                 return Ok(new
                 {
-                    token =  this.GenerateJWTToken(user),
+                    token =  this.GenerateJWTToken(user).Result,
                     user =appUser
 
                 });
@@ -84,12 +84,22 @@ namespace datingapp.api.Controllers
 
         }
 
-        private string  GenerateJWTToken(User user){
-              var claims = new[]
+        private async  Task<string>  GenerateJWTToken(User user){
+            
+           
+            var claims = new List<Claim>
             {
                     new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
                     new Claim(ClaimTypes.Name,user.UserName)
-                };
+            };
+
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            foreach (var role in roles)
+            {
+               claims.Add(new Claim(ClaimTypes.Role , role));
+            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
 

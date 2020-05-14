@@ -59,6 +59,12 @@ namespace datingapp.api
                     };
                 });
 
+            services.AddAuthorization(options => {
+                options.AddPolicy("RequireAdminRole" ,policy =>policy.RequireRole("Admin"));
+                options.AddPolicy("ModeratePhotoRole" ,policy =>policy.RequireRole("Moderator"));
+                options.AddPolicy("VipOnly" ,policy =>policy.RequireRole("Vip"));
+            });
+
 
             services.AddControllers().AddNewtonsoftJson(opt => {
                  opt.SerializerSettings.ReferenceLoopHandling= Newtonsoft.Json.ReferenceLoopHandling.Ignore;

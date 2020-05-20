@@ -103,38 +103,47 @@ namespace datingapp.api
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                // app.UseDeveloperExceptionPage();
             }
             else
             {
 
-                app.UseExceptionHandler(builder => {
-                    builder.Run(async context =>{
-                        context.Response.StatusCode=(int)HttpStatusCode.InternalServerError;
-                        var error = context.Features.Get<IExceptionHandlerFeature>();
-                        if(error !=null)
-                        {
-                            context.Response.AddApplicationError(error.Error.Message);
-                            await context.Response.WriteAsync(error.Error.Message);
-                        }
-                    });
-                });
+                // app.UseExceptionHandler(builder => {
+                //     builder.Run(async context =>{
+                //         context.Response.StatusCode=(int)HttpStatusCode.InternalServerError;
+                //         var error = context.Features.Get<IExceptionHandlerFeature>();
+                //         if(error !=null)
+                //         {
+                //             context.Response.AddApplicationError(error.Error.Message);
+                //             await context.Response.WriteAsync(error.Error.Message);
+                //         }
+                //     });
+                // });
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                //app.UseHsts();
+                app.UseHsts();
             }
            
-            //app.UseHttpsRedirection();
+
+
+            app.UseDeveloperExceptionPage();
+            app.UseHttpsRedirection();
            
 
             app.UseRouting();
+            
+           
+            
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseEndpoints(endPoints => {
                 endPoints.MapControllers();
-                //endPoints.MapFallbackToController("Index","Fallback");
-
+                endPoints.MapFallbackToController("Index","Fallback");
             });
            
         }

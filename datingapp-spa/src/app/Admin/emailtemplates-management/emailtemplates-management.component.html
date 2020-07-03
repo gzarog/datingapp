@@ -1,17 +1,21 @@
 <div class="row">
-  <table style="width: 100%">
+  <table datatable style="width: 100%">
+    <thead>
       <tr>
         <th style="width: 10%">ID</th>
         <th style="width: 30%">Name</th>
         <th style="width: 40%">Content</th>
         <th style="width: 20%"></th>
       </tr>
-      <tr *ngFor="let emailTemplate of emailTemplates">
-        <td>{{emailTemplate.id}}</td>
-        <td>{{emailTemplate.name}}</td>
-        <td>{{emailTemplate.content}}</td>
-        <td><button class="btn btn-info" (click)= "editEmailTemplate(emailTemplate)">Edit</button></td>
+    </thead>
+      <tbody>
+        <tr *ngFor="let emailTemplate of emailTemplates">
+          <td>{{emailTemplate.id}}</td>
+          <td>{{emailTemplate.name}}</td>
+          <td>{{emailTemplate.content}}</td>
+          <td><button class="btn btn-info" (click)= "editEmailTemplate(emailTemplate)">Edit</button></td>
 
-    </tr>
+      </tr>
+    </tbody>
   </table>
 </div>

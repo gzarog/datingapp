@@ -14,13 +14,22 @@ import { BsModalService ,BsModalRef} from 'ngx-bootstrap/modal';
   styleUrls: ['./user-mamagement.component.css']
 })
 export class UserMamagementComponent implements OnInit {
-  users : User[];
+users : User[];
 bsModalRef  : BsModalRef;
+dtOptions: DataTables.Settings = {};
 
   constructor(private adminService : AdminService, private modalService: BsModalService, private alertify : AlertifyService) { }
 
   ngOnInit() {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 2
+    };
     this.getUsersWithRoles();
+  }
+  ngOnDestroy() {
+    // Do not forget to unsubscribe the event
+   
   }
 
   getUsersWithRoles (){

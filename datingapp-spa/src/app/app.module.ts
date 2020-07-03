@@ -10,6 +10,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
@@ -41,6 +42,9 @@ import { PhotoManagementComponent } from './Admin/photo-management/photo-managem
 import { AdminService } from './_services/admin.service';
 import { UserMamagementComponent } from './Admin/user-mamagement/user-mamagement.component';
 import { RolesModalComponent } from './Admin/roles-modal/roles-modal.component';
+import { EmailtemplatesManagementComponent } from './Admin/emailtemplates-management/emailtemplates-management.component';
+import { EmailTemplateModalComponent } from './Admin/emailTemplate-modal/emailTemplate-modal.component';
+
 //import {TimeAgoPipe} from 'time-ago-pipe';
 
 
@@ -73,7 +77,9 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
-      HasRoleDirective
+      HasRoleDirective,
+      EmailtemplatesManagementComponent,
+      EmailTemplateModalComponent
 
      // TimeAgoPipe,
 
@@ -84,6 +90,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       HttpClientModule,
       FormsModule,
       NgxGalleryModule,
+      AngularEditorModule,
       ReactiveFormsModule,
       FileUploadModule,
       TabsModule.forRoot(),

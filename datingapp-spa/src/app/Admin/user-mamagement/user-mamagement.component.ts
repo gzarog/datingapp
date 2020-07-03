@@ -17,14 +17,14 @@ export class UserMamagementComponent implements OnInit {
   users : User[];
 bsModalRef  : BsModalRef;
 
-  constructor(private adimService : AdminService, private modalService: BsModalService, private alertify : AlertifyService) { }
+  constructor(private adminService : AdminService, private modalService: BsModalService, private alertify : AlertifyService) { }
 
   ngOnInit() {
     this.getUsersWithRoles();
   }
 
   getUsersWithRoles (){
-    this.adimService.getUsersWithRoles().subscribe((users :User[]) =>{
+    this.adminService.getUsersWithRoles().subscribe((users :User[]) =>{
         this.users =users ;
     }, error => {
       this.alertify.error(error);
@@ -42,7 +42,7 @@ bsModalRef  : BsModalRef;
         roleNames : [...values.filter(el => el.checked === true).map(el =>el.name)]
       };
       if (rolesToUpdate){
-        this.adimService.updateUserRoles(user, rolesToUpdate).subscribe(() => {
+        this.adminService.updateUserRoles(user, rolesToUpdate).subscribe(() => {
           user.roles = [...rolesToUpdate.roleNames];
 
         }, error => {

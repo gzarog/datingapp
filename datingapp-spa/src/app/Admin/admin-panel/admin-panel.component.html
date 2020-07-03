@@ -7,9 +7,15 @@
           <app-user-mamagement></app-user-mamagement>
         </div>
       </tab>
+      <tab heading="Email Templates" *appHasRole="['Admin','Moderator']" >
+        <div class="container">
+        <app-emailtemplates-management></app-emailtemplates-management>
+      </div>
+      </tab>
       <tab heading="Photo Management" *appHasRole="['Admin','Moderator']" >
         <app-photo-management></app-photo-management>
     </tab>
+
     </tabset>
   </div>
 </div>

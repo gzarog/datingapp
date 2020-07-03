@@ -94,7 +94,7 @@ namespace datingapp.api
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
             
             services.AddScoped<IDatingRepository,DatingRepository>();
-            
+            services.AddScoped<ISettingsRepository,SettingsRepository>();
             services.AddScoped<LogUserActivity>();
         }
 

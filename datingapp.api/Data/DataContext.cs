@@ -15,6 +15,9 @@ namespace datingapp.api.Data
         // removed for idenity implementation
         // public DbSet<User> Users { get; set; }
         public DbSet<Photo> Photos { get; set; }
+        public DbSet<EmailTemplate> EmailTemplates { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Edit Email Template </h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="emailTemplateForm" (ngSubmit)="saveEmailTemplate()">
+
+    <div class="form-group">
+      <input type="text"
+      [ngClass]="{'is-invalid': emailTemplateForm.get('name').errors && emailTemplateForm.get('name').touched}"
+      class="form-control"
+      formControlName="name"
+       placeholder="Template name">
+      <div class="invalid-feedback">input template name</div>
+    </div>
+
+ 
+    <div class="form-group">
+      <angular-editor formControlName="content" [config]="editorConfig"  ></angular-editor>
+    </div>
+
+
+  </form>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Cancel</button>
+  <button type="button" class="btn btn-success"  [disabled]="!emailTemplateForm.valid">Submit</button>
+</div>

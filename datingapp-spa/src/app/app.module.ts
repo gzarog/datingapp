@@ -10,8 +10,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { DataTablesModule } from 'angular-datatables';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import {TableModule} from 'primeng/table';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
@@ -90,7 +90,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       BrowserAnimationsModule,
       HttpClientModule,
       FormsModule,
-      DataTablesModule,
+      TableModule,
       NgxGalleryModule,
       AngularEditorModule,
       ReactiveFormsModule,

@@ -16,29 +16,13 @@ import { BsModalService ,BsModalRef} from 'ngx-bootstrap/modal';
 export class UserMamagementComponent implements OnInit {
 users : User[];
 bsModalRef  : BsModalRef;
-dtOptions: DataTables.Settings = {};
 
   constructor(private adminService : AdminService, private modalService: BsModalService, private alertify : AlertifyService) { }
 
   ngOnInit() {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 2
-    };
-    this.getUsersWithRoles();
-  }
-  ngOnDestroy() {
-    // Do not forget to unsubscribe the event
-   
+    this.adminService.getUsersWithRoles().then(users => this.users = users);
   }
 
-  getUsersWithRoles (){
-    this.adminService.getUsersWithRoles().subscribe((users :User[]) =>{
-        this.users =users ;
-    }, error => {
-      this.alertify.error(error);
-    } )
-  }
 
   editRolesModal(user :User){
     const initialState = {

@@ -1,12 +1,12 @@
 <div class="row">
-  <p-table [value] ="users">
-    <ng-template pTemplate="header">
- 
-    <tr>
-        <th>User ID</th>
-        <th>Username</th>
-        <th>Active Roles</th>
-        <th></th>
+  <p-table  [columns]="cols" [value] ="users" [paginator]="true" [rows]="rows" [showCurrentPageReport]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+              {{col.header}}
+              <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+          </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-user>

@@ -5,6 +5,7 @@ import { User } from 'src/app/_models/user';
 
 import { RolesModalComponent } from '../roles-modal/roles-modal.component';
 import { BsModalService ,BsModalRef} from 'ngx-bootstrap/modal';
+import { SortEvent } from 'primeng/api';
 
 
 
@@ -14,13 +15,23 @@ import { BsModalService ,BsModalRef} from 'ngx-bootstrap/modal';
   styleUrls: ['./user-mamagement.component.css']
 })
 export class UserMamagementComponent implements OnInit {
-users : User[];
-bsModalRef  : BsModalRef;
+  users : User[] =[];
+  bsModalRef  : BsModalRef;
+
+  rows = 6;
+  cols: any[];
+
 
   constructor(private adminService : AdminService, private modalService: BsModalService, private alertify : AlertifyService) { }
 
+
   ngOnInit() {
     this.adminService.getUsersWithRoles().then(users => this.users = users);
+    this.cols = [
+      { field: 'id', header: 'ID' },
+      { field: 'userName', header: 'User Name' },
+      { field: 'roles', header: 'Roles' }
+  ];
   }
 
 
